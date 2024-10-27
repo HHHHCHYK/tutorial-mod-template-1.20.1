@@ -18,6 +18,9 @@
 		"main": [
 			"com.example.TutorialMod"
 		],
+		"client": [
+			"com.example.TutorialModClient"
+		],
 		"fabric-datagen": [
 			"com.example.TutorialModDataGenerator"
 		]
