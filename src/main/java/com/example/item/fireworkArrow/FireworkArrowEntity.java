@@ -1,7 +1,6 @@
-package com.example.registry.fireworkArrowEntity;
+package com.example.item.fireworkArrow;
 
 import com.example.TutorialMod;
-import com.example.registry.ModItem;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -13,15 +12,15 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-public class Firework_arrowEntity extends ArrowEntity {
+public class FireworkArrowEntity extends ArrowEntity {
 
-    public Firework_arrowEntity(EntityType<?extends ArrowEntity> type, World world) {
+    public FireworkArrowEntity(EntityType<?extends ArrowEntity> type, World world) {
         super(type,world);
 
     }
 
 
-    public Firework_arrowEntity(World world,LivingEntity owner) {
+    public FireworkArrowEntity(World world, LivingEntity owner) {
         super(world,owner);
     }
 
@@ -30,7 +29,7 @@ public class Firework_arrowEntity extends ArrowEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(ModItem.FIREWORK_ARROW);
+        return new ItemStack(FireworkArrowItem.FIREWORK_ARROW);
     }
 
     @Override
@@ -57,8 +56,8 @@ public class Firework_arrowEntity extends ArrowEntity {
 
     }
 */
-    public static final EntityType<Firework_arrowEntity> FIREWORK_ARROW_ENTITY =
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC,(EntityType<Firework_arrowEntity> type, World world) -> new Firework_arrowEntity(type, world))
+    public static final EntityType<FireworkArrowEntity> FIREWORK_ARROW_ENTITY =
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC,(EntityType<FireworkArrowEntity> type, World world) -> new FireworkArrowEntity(type, world))
                     .dimensions(EntityDimensions.fixed(0.5F,0.5F))
                     .build();
 

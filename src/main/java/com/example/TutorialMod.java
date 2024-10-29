@@ -1,8 +1,9 @@
 package com.example;
 
-import com.example.registry.ModItem;
+import com.example.item.LightningItem;
+import com.example.item.fireworkArrow.FireworkArrowItem;
 import com.example.registry.ModItemGroup;
-import com.example.registry.fireworkArrowEntity.Firework_arrowEntity;
+import com.example.item.fireworkArrow.FireworkArrowEntity;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -24,8 +25,9 @@ public class TutorialMod implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
-		ModItem.initRegistry();
-		Firework_arrowEntity.initRegistryFireworkArrowEntity();
+		FireworkArrowItem.initRegistry();//注册烟花火矢
+		LightningItem.registryLightningItem();//注册测试物品：引雷棍
+		FireworkArrowEntity.initRegistryFireworkArrowEntity();//注册烟花火矢实体
 		ModItemGroup.initItemGroup();
 
 	}
