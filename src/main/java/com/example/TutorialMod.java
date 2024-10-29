@@ -1,6 +1,8 @@
 package com.example;
 
 import com.example.registry.ModItem;
+import com.example.registry.ModItemGroup;
+import com.example.registry.fireworkArrowEntity.Firework_arrowEntity;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -23,5 +25,10 @@ public class TutorialMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		ModItem.initRegistry();
+		Firework_arrowEntity.initRegistryFireworkArrowEntity();
+		ModItemGroup.initItemGroup();
+
 	}
+
+	
 }

@@ -1,3 +1,5 @@
 {
-  "item.tutorial-mod.firework_arrow": "firework_arrow"
+  "item.tutorial-mod.firework_arrow": "firework_arrow",
+  "itemGroup.tutorial-mod.my_mod": "My ItemGroup",
+  "item.tutorial-mod.firework_arrow.desc": "It can fly fast!"
 }

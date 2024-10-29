@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZKL"
+  ],
+  "key": {
+    "Z": {
+      "item": "minecraft:firework_rocket"
+    },
+    "K": {
+      "item": "minecraft:string"
+    },
+    "L": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "result": {
+    "item": "tutorial-mod:firework_arrow",
+    "count": 1
+  }
+}

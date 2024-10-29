@@ -1,3 +1,5 @@
 {
-  "item.tutorial-mod.firework_arrow": "烟花火箭"
+  "item.tutorial-mod.firework_arrow": "烟花火矢",
+  "itemGroup.tutorial-mod.my_mod": "我的物品组",
+  "item.tutorial-mod.firework_arrow.desc": "如同火箭般的箭矢！"
 }
