@@ -1,0 +1,13 @@
+{
+    "criteria":{
+        "getcbstone":{
+            "trigger":"minecraft:inventory_changed",
+            "conditions":{
+                "tag":"zky:threestone"
+            }
+        }
+    },
+    "rewards":{
+        "function":"zky:adsave/addstone"
+    }
+}

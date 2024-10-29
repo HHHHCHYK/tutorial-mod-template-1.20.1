@@ -1,0 +1,9 @@
+{
+    "conditions":"entity_scores",
+    "entity":"this",
+    "scores":{
+        "cbstonenumber":{
+            "min":640
+        }
+    }
+}

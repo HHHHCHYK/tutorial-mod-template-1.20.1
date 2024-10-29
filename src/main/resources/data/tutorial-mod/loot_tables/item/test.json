@@ -1,0 +1,27 @@
+{
+    "pools":[
+        {
+            "rolls":1,
+            "entries":[
+                {
+                    "type":"alternatives",
+                    "children":[
+                        {
+                            "type":"item",
+                            "name":"minecraft:diamond",
+                            "condition":[
+                                {
+                                    "predicates":"zky:empty_player"
+                                }
+                            ]
+                        },
+                        {
+                            "type":"item",
+                            "name":"minecraft:gold_nugget"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

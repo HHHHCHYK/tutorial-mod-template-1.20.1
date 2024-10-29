@@ -1,0 +1,20 @@
+{
+    "replace":"false",
+    "values":[
+        {
+            "unbreakable":{}
+        },
+        {
+            "attribute_modifiers":{
+                "modifiers":[
+                    {
+                        "id":"zkyhhh",
+                        "amount":1,
+                        "operation":"add_multiplied_total",
+                        "type":"generic.jump_strength"
+                    }
+                ]
+            }
+        }
+    ]
+}

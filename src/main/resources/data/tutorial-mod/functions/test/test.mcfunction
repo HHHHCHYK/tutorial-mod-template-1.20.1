@@ -1,0 +1,1 @@
+give @s diamond[custom_model_data=240024]

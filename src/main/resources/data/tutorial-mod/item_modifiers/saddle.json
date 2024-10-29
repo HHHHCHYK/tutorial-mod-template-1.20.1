@@ -1,0 +1,24 @@
+{
+    "condition":[
+        {
+            "predicate":"zky:empty_player"
+        }
+    ],
+    "function":{
+        "set_components":{
+            "components":{
+                "custom_model_data":2400,
+                "custom_name":"精良马鞍",
+                "item_name":"supersaddle",
+                "attribute_modifiers":[
+                    {
+                        "id":"supersaddle",
+                        "type":"generic.jump_strength",
+                        "amount":1,
+                        "operation":"add_multiplied_total"
+                    }
+                ]
+            }
+        }
+    }
+}

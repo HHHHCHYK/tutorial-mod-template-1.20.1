@@ -1,0 +1,16 @@
+{
+    "display": {
+        "title": "刷石机",
+        "description": "无限原石的第一步！",
+        "icon": {
+            "id": "minecraft:cobblestone"
+        }
+    },
+    "criteria": {
+        "cobblestone1000": {
+            "trigger": "minecraft:inventory_changed",
+            "predicates":"minecraft:cbstonescores"
+        }
+    },
+    "parent":"zky:zkyfun/zky_root"
+}
