@@ -6,6 +6,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.*;
 import net.minecraft.text.Text;
@@ -22,20 +23,21 @@ public class FireworkArrowItem extends ArrowItem {
     public FireworkArrowItem(Item.Settings settings) {
         super(settings);
     }
+
+
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<net.minecraft.text.Text> tooltip, TooltipContext tooltipContext){
         super.appendTooltip(stack,world,tooltip,tooltipContext);
         tooltip.add(Text.translatable("item.tutorial-mod.firework_arrow.desc").formatted(Formatting.WHITE));
     }
 
-
+    public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
+        return new FireworkArrowEntity(world,shooter);
+    }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user,Hand hand){
 
-        if (world.isClient){
-            return super.use(world,user,hand);
-        }
 
         if(user == null){
             return TypedActionResult.pass(user.getStackInHand(hand));
@@ -52,13 +54,8 @@ public class FireworkArrowItem extends ArrowItem {
         user.getStackInHand(hand).decrement(1);
         return TypedActionResult.success(user.getStackInHand(hand));
     }
-
-
 //上面是箭矢的方法实现，通过对use方法复写实现
 
-    @Override
-    public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
-        return new FireworkArrowEntity(world,shooter); // 返回自定义箭矢实体
-    }
+
 
 }

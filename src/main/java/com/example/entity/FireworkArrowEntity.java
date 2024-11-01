@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.example.registry.EntityRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -15,18 +16,19 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 
-public class FireworkArrowEntity extends ArrowEntity {
+public class FireworkArrowEntity extends PersistentProjectileEntity {
     public FireworkArrowEntity(EntityType<? extends FireworkArrowEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public FireworkArrowEntity(World world, PlayerEntity user){
-        super(world,user);
+    public FireworkArrowEntity(EntityType<?extends  FireworkArrowEntity> entityType,LivingEntity shooter,World world){
+        super(entityType,shooter,world);
     }
 
-    public FireworkArrowEntity(World world,LivingEntity shooter){
-        super(world,shooter);
+    public FireworkArrowEntity(World world, LivingEntity owner) {
+        super(EntityRegistry.FIREWORK_ARROW_ENTITY, owner, world);
     }
+
 
 
     @Override
@@ -39,7 +41,6 @@ public class FireworkArrowEntity extends ArrowEntity {
             target.addStatusEffect(effectInstance,this.getEffectCause());
             this.getWorld().createExplosion(this,getX(),getY(),getZ(),0F,false, World.ExplosionSourceType.NONE);
             this.discard();
-            this.discard();
         }
     }//使得生物获得漂浮效果并且被爆炸推动
 
@@ -47,6 +48,8 @@ public class FireworkArrowEntity extends ArrowEntity {
     protected ItemStack asItemStack(){
         return new ItemStack(Items.ARROW);
     }//返回普通箭矢
+
+
 
 
 }

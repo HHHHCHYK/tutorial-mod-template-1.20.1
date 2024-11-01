@@ -26,6 +26,7 @@ public class TutorialMod implements ModInitializer {
 
 		ItemRegister.initItemRegistry();
 		EntityRegistry.initEntityRegistry();
+		ModItemGroup.addItemGroup();
 		ModItemGroup.initItemGroup();
 
 	}
