@@ -1,8 +1,9 @@
 package com.example;
 
 import com.example.registry.EntityRegistry;
-import com.example.registry.ItemRegister;
+import com.example.registry.ItemRegistry;
 import com.example.registry.ModItemGroup;
+import com.example.registry.ParticleRegistry;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -24,10 +25,11 @@ public class TutorialMod implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
-		ItemRegister.initItemRegistry();
-		EntityRegistry.initEntityRegistry();
-		ModItemGroup.addItemGroup();
-		ModItemGroup.initItemGroup();
+		ItemRegistry.initItemRegistry();//注册物品
+		ParticleRegistry.initRegistryParticle();//注册粒子
+		EntityRegistry.initEntityRegistry();//注册实体
+		ModItemGroup.addItemGroup();//添加物品进入物品组
+		ModItemGroup.initItemGroup();//创建物品组
 
 	}
 

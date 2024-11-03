@@ -1,6 +1,7 @@
 package com.example.registry;
 
 import com.example.entity.FireworkArrowEntity;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleRenderEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.ProjectileEntityRenderer;
@@ -23,4 +24,5 @@ public class RenderRegistry {
                     }
                 });
     }
+
 }

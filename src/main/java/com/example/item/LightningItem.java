@@ -1,7 +1,7 @@
 package com.example.item;
 
 
-import com.example.registry.ItemRegister;
+import com.example.registry.ItemRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.item.Item;
@@ -38,6 +38,6 @@ public class LightningItem extends Item {
     }
 
     public static void registryLightningItem(){
-        ItemRegister.itemRegistry("lightning_item",new Item(new Item.Settings()));
+        ItemRegistry.itemRegistry("lightning_item",new Item(new Item.Settings()));
     }
 }

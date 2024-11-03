@@ -7,11 +7,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.*;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 
 public class FireworkArrowItem extends ArrowItem {
@@ -36,7 +36,6 @@ public class FireworkArrowItem extends ArrowItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user,Hand hand){
 
-
         if(user == null){
             return TypedActionResult.pass(user.getStackInHand(hand));
         }
@@ -46,9 +45,9 @@ public class FireworkArrowItem extends ArrowItem {
                 ,user.getYaw()
                 , 1f,5,1);
         world.spawnEntity(fireworkArrowEntity);
+
         ItemStack stack = user.getStackInHand(hand);
         stack.decrement(1);
-        TutorialMod.LOGGER.info("Method use is running");
         user.getStackInHand(hand).decrement(1);
         return TypedActionResult.success(user.getStackInHand(hand));
     }

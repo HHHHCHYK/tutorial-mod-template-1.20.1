@@ -12,9 +12,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroup extends ItemGroups {
-    public static final ItemGroup MY_ITEMGROUP = FabricItemGroup.builder().icon(()->new ItemStack(ItemRegister.FIREWORK_ARROW))
+    public static final ItemGroup MY_ITEMGROUP = FabricItemGroup.builder().icon(()->new ItemStack(ItemRegistry.FIREWORK_ARROW))
             .displayName(Text.translatable("itemGroup.tutorial-mod.my_mod"))
-            .entries(((displayContext, entries) -> entries.add(ItemRegister.FIREWORK_ARROW)))
+            .entries(((displayContext, entries) -> entries.add(ItemRegistry.FIREWORK_ARROW)))
             .build();
 
     public static void initItemGroup(){
@@ -23,7 +23,7 @@ public class ModItemGroup extends ItemGroups {
 
     public static void addItemGroup(){//向已存在物品组添加物品的方法
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content ->
-                content.add(ItemRegister.FIREWORK_ARROW));
+                content.add(ItemRegistry.FIREWORK_ARROW));
         //战斗物品组的物品添加
     }
 
