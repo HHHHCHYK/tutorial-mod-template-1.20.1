@@ -44,9 +44,9 @@ public class WhitNormalParticle extends Particle {
     @Override
     public void buildGeometry(VertexConsumer vertexConsumer, Camera camera, float tickDelta) {
         float scale =age/lifetime;
-        float x = (float) this.x;
-        float y = (float) this.y;
-        float z = (float) this.z;
+        float x = this.x;
+        float y = this.y;
+        float z = this.z;
 
         int color = getColor();
         float alpha = this.alpha;
