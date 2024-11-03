@@ -14,7 +14,8 @@ import net.minecraft.util.Identifier;
 public class EntityRegistry {
     public static final EntityType<FireworkArrowEntity> FIREWORK_ARROW_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(TutorialMod.MOD_ID,"firework_arrow_entity"),
-            FabricEntityTypeBuilder.<FireworkArrowEntity>create(SpawnGroup.MISC,FireworkArrowEntity::new).dimensions(EntityDimensions.fixed(0.5F,0.5F)).build());
+            FabricEntityTypeBuilder.<FireworkArrowEntity>create(SpawnGroup.MISC,FireworkArrowEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.2F,0.2F)).build());
     //注册箭矢实体
 
 

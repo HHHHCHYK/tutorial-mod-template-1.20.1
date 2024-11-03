@@ -46,7 +46,7 @@ public class FireworkArrowItem extends ArrowItem {
         fireworkArrowEntity.setVelocity(user
                 ,user.getPitch()
                 ,user.getYaw()
-                , 3f,10,1);
+                , 1f,5,1);
         world.spawnEntity(fireworkArrowEntity);
         ItemStack stack = user.getStackInHand(hand);
         stack.decrement(1);
@@ -54,6 +54,8 @@ public class FireworkArrowItem extends ArrowItem {
         user.getStackInHand(hand).decrement(1);
         return TypedActionResult.success(user.getStackInHand(hand));
     }
+
+
 //上面是箭矢的方法实现，通过对use方法复写实现
 
 

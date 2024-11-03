@@ -37,7 +37,7 @@ public class FireworkArrowEntity extends PersistentProjectileEntity {
 
         World world = target.getWorld();
         if(!world.isClient()){
-            StatusEffectInstance effectInstance = new StatusEffectInstance(StatusEffects.LEVITATION,200,10);
+            StatusEffectInstance effectInstance = new StatusEffectInstance(StatusEffects.LEVITATION,10,50);
             target.addStatusEffect(effectInstance,this.getEffectCause());
             this.getWorld().createExplosion(this,getX(),getY(),getZ(),0F,false, World.ExplosionSourceType.NONE);
             this.discard();
@@ -48,6 +48,12 @@ public class FireworkArrowEntity extends PersistentProjectileEntity {
     protected ItemStack asItemStack(){
         return new ItemStack(Items.ARROW);
     }//返回普通箭矢
+
+    @Override
+    public void tick(){
+        super.tick();
+
+    }
 
 
 
