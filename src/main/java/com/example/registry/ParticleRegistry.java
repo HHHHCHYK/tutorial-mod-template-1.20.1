@@ -1,7 +1,6 @@
 package com.example.registry;
 
 import com.example.TutorialMod;
-import com.example.particle.WhiteNormalParticle;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;

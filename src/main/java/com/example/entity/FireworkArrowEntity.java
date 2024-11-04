@@ -1,9 +1,9 @@
 package com.example.entity;
 
+import com.example.TutorialMod;
 import com.example.misc.NormalVectorGenerator;
 import com.example.registry.EntityRegistry;
 import com.example.registry.ParticleRegistry;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -12,16 +12,13 @@ import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class FireworkArrowEntity extends PersistentProjectileEntity {
 
-    private boolean flying =true;
+    private final boolean flying =true;
 
     public FireworkArrowEntity(EntityType<? extends FireworkArrowEntity> entityType, World world) {
         super(entityType, world);
@@ -89,9 +86,8 @@ public class FireworkArrowEntity extends PersistentProjectileEntity {
             for(int i =0;i<72;i++){
                 Vec3d direction = NormalVectorGenerator.rotateAroundAxis(startVector, axis, angle * i);
 
-                // 生成烟雾粒子
                 this.getWorld().addParticle(
-                        ParticleTypes.SMOKE, x, y, z,
+                        ParticleRegistry.WHITE_NORMAL_PARTICLE, x, y, z,
                         velocityMul * direction.x, velocityMul * direction.y, velocityMul * direction.z
                 );
             }

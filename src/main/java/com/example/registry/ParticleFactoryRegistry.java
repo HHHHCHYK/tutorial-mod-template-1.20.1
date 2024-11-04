@@ -2,9 +2,6 @@ package com.example.registry;
 
 import com.example.TutorialMod;
 import com.example.particle.factory.WhiteNormalParticleFactory;
-import net.minecraft.client.particle.SpriteProvider;
-import net.minecraft.client.texture.Sprite;
-import net.minecraft.util.math.random.Random;
 
 public class ParticleFactoryRegistry {
 
