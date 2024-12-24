@@ -20,9 +20,11 @@ public class WhiteNormalParticleFactory implements ParticleFactory<DefaultPartic
         return this.spriteProvider;
     }
 
+
+
     @Override
     public @Nullable Particle createParticle(DefaultParticleType parameters, ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-        return new WhiteNormalParticle(world, x, y, z, velocityX, velocityY, velocityZ);
+        return new WhiteNormalParticle(world, x, y, z, spriteProvider,0);
     }
 }
 //WhiteNormalParticle(world, x, y, z, velocityX, velocityY, velocityZ)

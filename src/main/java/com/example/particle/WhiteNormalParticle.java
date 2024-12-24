@@ -1,19 +1,18 @@
 package com.example.particle;
 
 import com.example.TutorialMod;
-import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.AnimatedParticle;
 import net.minecraft.client.particle.ParticleTextureSheet;
+import net.minecraft.client.particle.SpriteProvider;
 import net.minecraft.client.render.*;
-import net.minecraft.client.texture.TextureManager;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.util.Identifier;
 
-public class WhiteNormalParticle extends Particle {
+public class WhiteNormalParticle extends AnimatedParticle {
     private static final float LIFETIME = 40.0F;
     private float alpha =1;
 
-    public WhiteNormalParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-        super(world, x, y, z, velocityX, velocityY, velocityZ);
+    public WhiteNormalParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider, float upwardsAcceleration) {
+        super(world, x, y, z, spriteProvider,upwardsAcceleration);
         this.maxAge = (int) LIFETIME;
     }
 
@@ -40,34 +39,47 @@ public class WhiteNormalParticle extends Particle {
 
         // 使用RGBA颜色
         int color = getColor();
-        float red = (color >> 16 & 255) / 255.0F;
-        float green = (color >> 8 & 255) / 255.0F;
-        float blue = (color & 255) / 255.0F;
+        float red = color / 255.0F;
+        float green = color/ 255.0F;
+        float blue = color/ 255.0F;
 
-        try{
-            vertexConsumer.vertex(x - scale, y, z).color(red, green, blue, alpha).texture(0,0).light(1)
-                    .next();
-            vertexConsumer.vertex(x + scale, y, z).color(red, green, blue, alpha).texture(1,0).light(1)
-                    .next();
-            vertexConsumer.vertex(x, y, z - scale).color(red, green, blue, alpha).texture(0,1).light(1)
-                    .next();
-            vertexConsumer.vertex(x, y, z + scale).color(red, green, blue, alpha).texture(1,1).light(1)
-                    .next();
-        }catch (Exception e){
-            TutorialMod.LOGGER.debug("Error e");
-        }
+        vertexConsumer.vertex(x - scale, y, z)
+                .texture(0,0)
+                .color(red, green, blue, alpha)
+                .light(1)
+                .next();
+        vertexConsumer.vertex(x + scale, y, z)
+                .texture(1,0)
+                .color(red, green, blue, alpha)
+                .light(1)
+                .next();
+        vertexConsumer.vertex(x, y, z - scale)
+                .texture(0,1)
+                .color(red, green, blue, alpha)
+                .light(1)
+                .next();
+        vertexConsumer.vertex(x, y, z + scale)
+                .texture(0,1)
+                .color(red, green, blue, alpha)
+                .light(1)
+                .next();
 
-        TutorialMod.LOGGER.info("builder was built.");
+        TutorialMod.LOGGER.debug("buildG");
     }
 
     @Override
     public ParticleTextureSheet getType() {
+        TutorialMod.LOGGER.debug("GetTypeRun");
         return ParticleTextureSheet.PARTICLE_SHEET_OPAQUE;
     }
 
     public static int getColor() {
+        TutorialMod.LOGGER.debug("ColorRun");
         // 返回一个 RGBA 颜色值，255 代表不透明的白色
-        TutorialMod.LOGGER.info("PC is running");
-        return 0xFFFFFFFF; // 代表白色
+        return 255; // 代表白色
+    }
+
+    public float getAlpha() {
+        return alpha;
     }
 }
