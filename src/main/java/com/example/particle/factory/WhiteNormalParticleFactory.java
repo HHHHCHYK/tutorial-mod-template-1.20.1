@@ -1,6 +1,5 @@
 package com.example.particle.factory;
 
-import com.example.TutorialMod;
 import com.example.particle.WhiteNormalParticle;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;

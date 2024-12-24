@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tutorial-mod:item/firework_arrow"
+    "layer0": "genshin_mc:item/firework_arrow"
   }
 }
