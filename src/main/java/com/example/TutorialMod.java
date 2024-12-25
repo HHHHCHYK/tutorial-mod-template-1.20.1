@@ -2,7 +2,6 @@ package com.example;
 
 import com.example.registry.*;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,12 +30,6 @@ public class TutorialMod implements ModInitializer {
 		EntityRegistry.initEntityRegistry();//注册实体
 		ModItemGroup.addItemGroup();//添加物品进入物品组
 		ModItemGroup.initItemGroup();//创建物品组
-
-
-		/*以下是一些事件监听
-			其中包括:
-
-		 */
 
 
 	}

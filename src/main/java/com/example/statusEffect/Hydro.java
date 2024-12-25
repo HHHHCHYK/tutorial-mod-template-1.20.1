@@ -14,6 +14,10 @@ public class Hydro extends Elements{
         super(category, color);
     }
 
+    /*
+        在这里，HYDRO是Hydro类的一个实例，虽然这个实例在Hydro类中被声明
+     */
+    //水元素
     public static final Hydro HYDRO = new Hydro(StatusEffectCategory.NEUTRAL, 0X00BFFF);//创建水附着实例
 
     @Override

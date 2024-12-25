@@ -8,6 +8,7 @@ public class Dendro extends Elements{
         super(category, color);
     }
 
+    //草元素
     public static final Dendro DENDRO =new Dendro(StatusEffectCategory.NEUTRAL,0X66AD16);
 
 

@@ -15,6 +15,7 @@ public class Cryo extends Elements {
         super(category, color);
     }
 
+    //冰元素
     public static final Cryo CRYO =new Cryo(StatusEffectCategory.NEUTRAL,0X4682B4);
 
     @Override

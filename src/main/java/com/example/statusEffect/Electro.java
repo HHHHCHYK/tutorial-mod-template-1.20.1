@@ -8,6 +8,7 @@ public class Electro extends Elements{
         super(category, color);
     }
 
+    //雷元素
     public static final Electro ELECTRO =new Electro(StatusEffectCategory.NEUTRAL,0X945DC4);
 
     @Override

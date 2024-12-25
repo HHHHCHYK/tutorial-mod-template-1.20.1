@@ -8,6 +8,7 @@ public class Pyro extends Elements{
         super(category, color);
     }
 
+    //火元素
     public static final Pyro PYRO =new Pyro(StatusEffectCategory.NEUTRAL,0XEC4923);
 
     @Override
