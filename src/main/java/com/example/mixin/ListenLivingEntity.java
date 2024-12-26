@@ -1,5 +1,6 @@
 package com.example.mixin;
 
+import com.example.statusEffect.Cryo;
 import com.example.statusEffect.Hydro;
 import com.example.statusEffect.Pyro;
 import net.minecraft.block.Block;
@@ -41,11 +42,18 @@ public abstract class ListenLivingEntity {
             /*
             如果实体进入水中，将会被添加水附着状态
              */
-            livingEntity.addStatusEffect(new StatusEffectInstance(Hydro.HYDRO));
+            livingEntity.addStatusEffect(new StatusEffectInstance(Hydro.HYDRO,Hydro.HYDRO.getDurationLevel(),3));
+
         }
+
+        if(block.equals(Blocks.POWDER_SNOW)){
+            livingEntity.addStatusEffect(new StatusEffectInstance(Cryo.CRYO,Cryo.CRYO.getDurationLevel(),3));
+        }
+
         if(livingEntity.isOnFire()){
-            livingEntity.addStatusEffect(new StatusEffectInstance(Pyro.PYRO));
+            livingEntity.addStatusEffect(new StatusEffectInstance(Pyro.PYRO,Pyro.PYRO.getDurationLevel(),3));
         }
+
 
 
     }
