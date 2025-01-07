@@ -24,6 +24,7 @@ public class TutorialMod implements ModInitializer {
 		/*
 			下面的部分是模组的初始化注册，如若代码出现问题，请检查这里是否出现漏注册或者注册顺序错误
 		*/
+		DamageTypeRegistry.initDamageTypeRegistry();//注册伤害类型
 		ItemRegistry.initItemRegistry();//注册物品
 		StatusEffectsRegistry.initRegistry();//注册状态效果
 		ParticleRegistry.initRegistryParticle();//注册粒子
