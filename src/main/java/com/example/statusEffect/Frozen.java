@@ -9,6 +9,9 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class Frozen extends Elements{
 
+
+    public int jumpCount = 0;
+
     protected Frozen(StatusEffectCategory category, int color) {
         super(category, color);
     }
@@ -38,6 +41,14 @@ public class Frozen extends Elements{
         //下面增添frozen的攻击速度修改器
         EntityAttributeInstance attachAttributeInstance = entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_SPEED);
         addAttributeModifier(attachAttributeInstance,frozenAttachModifier);
+
+
+
+
+        if(jumpCount >= 5){
+            entity.removeStatusEffect(Frozen.FROZEN);
+            jumpCount = 0;
+        }
     }
 
 

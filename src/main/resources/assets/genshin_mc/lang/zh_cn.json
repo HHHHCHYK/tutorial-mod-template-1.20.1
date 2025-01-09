@@ -2,10 +2,15 @@
   "item.genshin_mc.firework_arrow": "烟花火矢",
   "itemGroup.genshin_mc.my_mod": "我的物品组",
   "item.genshin_mc.firework_arrow.desc": "如同火箭般的箭矢！",
+
+
   "effect.genshin_mc.hydro": "水附着",
   "effect.genshin_mc.cryo": "冰附着",
   "effect.genshin_mc.dendro": "草附着",
   "effect.genshin_mc.electro": "雷附着",
   "effect.genshin_mc.frozen": "冰冻",
-  "effect.genshin_mc.pyro": "火附着"
+  "effect.genshin_mc.pyro": "火附着",
+
+
+  "lang.genshin_mc.jumpCount": "用力跳！！！"
 }
