@@ -1,6 +1,7 @@
 package com.example.mixin;
 
 import com.example.statusEffect.Cryo;
+import com.example.statusEffect.Frozen;
 import com.example.statusEffect.Hydro;
 import com.example.statusEffect.Pyro;
 import net.minecraft.block.Block;
@@ -15,13 +16,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Collection;
+
 @Mixin(LivingEntity.class)
-public abstract class ListenLivingEntity {
+public abstract class MixinLivingEntity {
 
     @Shadow public abstract void endCombat();
 
     @Inject(method = "tick",at = @At("HEAD"))
-    public void Influence(CallbackInfo info){
+    public void entityInfluence(CallbackInfo info){
         /*
         下面这一段是为了与原函数对齐颗粒度
          */
@@ -54,8 +57,26 @@ public abstract class ListenLivingEntity {
             livingEntity.addStatusEffect(new StatusEffectInstance(Pyro.PYRO,Pyro.PYRO.getDurationLevel(),3));
         }
 
+    }
+
+    @Inject(method = "jump",at = @At("HEAD"))
+    public void changeEntityJump(CallbackInfo info){
+        LivingEntity entity = (LivingEntity) (Object)this;
 
 
+
+        Collection<StatusEffectInstance> statusEffectInstances = entity.getStatusEffects();
+
+        for(StatusEffectInstance statusEffectInstance : statusEffectInstances){
+            if(statusEffectInstance.getEffectType() instanceof Frozen){
+                //Debug
+                System.out.println("Mixin is running");
+
+
+                entity.setVelocity(entity.getVelocity().getX(),0.1,entity.getVelocity().getZ());
+                return;
+            }
+        }
     }
 
 }

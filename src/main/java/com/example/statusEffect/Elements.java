@@ -47,7 +47,7 @@ public abstract class Elements extends StatusEffect {
             }
 
             if(hasModifier == 0){
-                attributeInstance.addPersistentModifier(attributeModifier);
+                attributeInstance.addTemporaryModifier(attributeModifier);
             }
         }
 

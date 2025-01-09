@@ -15,10 +15,6 @@ public class Frozen extends Elements{
     //冻元素
     public static final Frozen FROZEN =new Frozen(StatusEffectCategory.NEUTRAL,0X4682B4);
 
-    @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-
-    }
 
     /*
     下面创建速度修改器，其作用分别是：
@@ -34,19 +30,16 @@ public class Frozen extends Elements{
 
 
     @Override
-    public void onApplied(LivingEntity entity, AttributeContainer attributeContainer, int duration){
-        super.onApplied(entity,attributeContainer,duration);
-
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         //下面增添frozen的速度修改器
         EntityAttributeInstance speedAttributeInstance = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
         addAttributeModifier(speedAttributeInstance,frozenSpeedModifier);
 
-
         //下面增添frozen的攻击速度修改器
         EntityAttributeInstance attachAttributeInstance = entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_SPEED);
         addAttributeModifier(attachAttributeInstance,frozenAttachModifier);
-
     }
+
 
     @Override
     public void onRemoved (LivingEntity entity, AttributeContainer attributeContainer, int duration){
