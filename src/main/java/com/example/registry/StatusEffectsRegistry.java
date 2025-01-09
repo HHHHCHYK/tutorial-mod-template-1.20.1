@@ -14,5 +14,6 @@ public class StatusEffectsRegistry {
         Registry.register(Registries.STATUS_EFFECT,new Identifier(TutorialMod.MOD_ID,"pyro"), Pyro.PYRO);//注册状态——火附着
         Registry.register(Registries.STATUS_EFFECT,new Identifier(TutorialMod.MOD_ID,"electro"), Electro.ELECTRO);//注册状态——雷附着
         Registry.register(Registries.STATUS_EFFECT,new Identifier(TutorialMod.MOD_ID,"dendro"), Dendro.DENDRO);//注册状态——草附着
+        Registry.register(Registries.STATUS_EFFECT,new Identifier(TutorialMod.MOD_ID,"frozen"),Frozen.FROZEN);//注册冻元素
     }
 }

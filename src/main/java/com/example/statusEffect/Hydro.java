@@ -1,8 +1,7 @@
 package com.example.statusEffect;
 
+import com.example.registry.DamageSourceRegistry;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -19,10 +18,11 @@ public class Hydro extends Elements{
     //水元素
     public static final Hydro HYDRO = new Hydro(StatusEffectCategory.NEUTRAL, 0X00BFFF);//创建水附着实例
 
+
+
     @Override
     public void applyUpdateEffect(LivingEntity entity,int amplifier){
-        EntityAttributeInstance attributeInstance = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);//获取当前实体的属性实例
-        Collection<StatusEffectInstance> effectInstances = entity.getStatusEffects();//获取当前实体状态
+        Collection<StatusEffectInstance> effectInstances = entity.getStatusEffects();//获取当前实体状态效果
         World world = entity.getWorld();
 
         if(duration>340){
@@ -59,19 +59,15 @@ public class Hydro extends Elements{
                 /*
                     这里实现水雷感电反应
                  */
+
                 if(effectType instanceof Electro){
-                    int electroDuration = effectInstance.getDuration();
-                    int newDuration = electroDuration - duration;
 
-                    entity.removeStatusEffect(Hydro.HYDRO);
-                    entity.removeStatusEffect(Electro.ELECTRO);
-                    //前置移除已有元素
-
-
-                    if(newDuration>0){
-                        entity.addStatusEffect(new StatusEffectInstance(Electro.ELECTRO,newDuration));
-                    }//反应后，后手元素不残留，先手元素残留
+                    if (electroChargedTimer == 0) {
+                        entity.damage(DamageSourceRegistry.of(world, DamageSourceRegistry.ELECTRO_CHARGED), 0.4f);
+                    }
                 }
+
+
 
 
             }
